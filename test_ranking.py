@@ -583,7 +583,7 @@ def main(params):
 def args():
     parser = argparse.ArgumentParser(description='Testing script for hits@10')
     parser.add_argument("--device", type=str, default='cuda:0', help="Which GPU to use?")
-    parser.add_argument("--main_dir", type=str, default='/media/data2/lm/Experiments/KG/FD_dropout/')
+    parser.add_argument("--main_dir", type=str, default='')
     parser.add_argument("--model_name", type=str, default='GAE_FD', choices=['RGCN', 'InGram'])
 
     # Experiment setup params
