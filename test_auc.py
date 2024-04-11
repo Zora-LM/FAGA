@@ -76,7 +76,7 @@ def args():
     parser = argparse.ArgumentParser(description='TransE model')
     parser.add_argument("--device", type=str, default='cuda:0', help="Which GPU to use?")
     parser.add_argument("--model_name", type=str, default='GVAE_FD_simple_v2', choices=['RGCN', 'InGram'])
-    parser.add_argument("--main_dir", type=str, default='/media/data2/lm/Experiments/KG/FD_v2/')
+    parser.add_argument("--main_dir", type=str, default='')
     parser.add_argument("--exp_dir", type=str, default='./experiments/')
     parser.add_argument("--runs", type=int, default=1, help="How many runs to perform for mean and std?")
 
