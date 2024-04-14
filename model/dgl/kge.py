@@ -74,7 +74,7 @@ class TransE(nn.Module):
 
     def __init__(self, dim):
         super(TransE, self).__init__()
-        self.fc = nn.Linear(dim, 1)
+        self.fc = nn.Identity()
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, head_emb, relation_emb, tail_emb):
@@ -91,7 +91,7 @@ class TransE(nn.Module):
             score: The score of triples.
         """
         score = (head_emb + relation_emb) - tail_emb
-        output = self.sigmoid(self.fc(score))
+        output = self.sigmoid(self.fc(score).sum(-1))
 
         return output
 
