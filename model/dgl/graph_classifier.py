@@ -168,9 +168,9 @@ class Decoder(nn.Module):
     def __init__(self, args, in_dim_ent, in_dim_rel, out_dim):
         super(Decoder, self).__init__()
         self.args = args
-        self.head_fc = nn.Linear(in_dim_ent, out_dim)
-        self.tail_fc = nn.Linear(in_dim_ent, out_dim)
-        self.rel_fc = nn.Linear(in_dim_rel, out_dim)
+        self.head_fc = nn.Identity()
+        self.tail_fc = nn.Identity()
+        self.rel_fc = nn.Identity()
         self.score = score_method[self.args.mode](out_dim)
         self.act = nn.ReLU()
 
