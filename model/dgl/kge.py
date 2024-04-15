@@ -91,7 +91,7 @@ class TransE(nn.Module):
             score: The score of triples.
         """
         score = (head_emb + relation_emb) - tail_emb
-        output = self.sigmoid(torch.norm(self.fc(score), p=1, dim=-1))
+        output = self.sigmoid(self.fc(score).sum(-1))
 
         return output
 
